@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=no;" id="viewport" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>野马T70图片</title>
+
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/LArea2.css">
+</head>
+<body>
+	<ul class="car_picTitle">
+		<li class="car_picOpt" id="demo6">全部车型<input type="text" id="demo6" value="" readonly="" hidden=""></li>
+		<li class="car_picOpt" id="color">全部颜色</li>
+	</ul>
+	<div class="car_pics">
+		<div class="hr_10"></div>
+		<div class="car_body">
+			<div class="car_bodyTit">
+				<span class="fl">车身外观(<i>201</i>张)</span>
+				<span class="fr carPic_more"><a href="more3.html">查看所有&gt;</a></span>
+			</div>
+			<ul class="car_picList clearfix">
+				<li class="car_picItem"><img src="images/car1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/car2.png" alt=""></li>
+				<li class="car_picItem"><img src="images/car2.png" alt=""></li>
+				<li class="car_picItem"><img src="images/car2.png" alt=""></li>
+				<li class="car_picItem"><img src="images/car2.png" alt=""></li>
+				<li class="car_picItem"><img src="images/car2.png" alt=""></li>
+			</ul>
+		</div>
+		<div class="hr_10"></div>
+		<div class="car_body">
+			<div class="car_bodyTit">
+				<span class="fl">中控内饰(<i>201</i>张)</span>
+				<span class="fr carPic_more"><a href="more4.html">查看所有&gt;</a></span>
+			</div>
+			<ul class="car_picList clearfix">
+				<li class="car_picItem"><img src="images/trim1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/trim1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/trim1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/trim1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/trim1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/trim1.png" alt=""></li>
+			</ul>
+		</div>
+		<div class="hr_10"></div>
+		<div class="car_body">
+			<div class="car_bodyTit">
+				<span class="fl">细节特点(<i>201</i>张)</span>
+				<span class="fr carPic_more"><a href="more5.html">查看所有&gt;</a></span>
+			</div>
+			<ul class="car_picList clearfix">
+				<li class="car_picItem"><img src="images/details1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/details1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/details1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/details1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/details1.png" alt=""></li>
+				<li class="car_picItem"><img src="images/details1.png" alt=""></li>
+			</ul>
+		</div>
+		<div class="hr_115"></div>
+	</div> 
+	<!-- 弹出窗口- 颜色 -->
+	<div id="colorOpt">
+		<ul class="colors clearfix">
+			<li class="color_item">
+			   <img src="images/color11.png" alt="">珠光白
+			</li>
+			<li class="color_item"><img src="images/color12.png" alt="">摩卡棕</li>
+			<li class="color_item"><img src="images/color13.png" alt="">凤凰橙</li>
+			<li class="color_item"><img src="images/color15.png" alt="">德兰黑</li>
+			<li class="color_item active"><img src="images/color14.png" alt="">皓月灰</li>
+		</ul>
+		<div class="confirm">确认</div>
+	</div>
+	<div id="overlay"></div>
+	<div class="gearArea"></div>
+	<script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/LAreaData1.js"></script>
+    <script src="js/LAreaData2.js"></script>
+    <script src="js/LArea1.js"></script>
+    <script src="js/touch.js"></script>
+    <script>
+    $('.gearArea').css({'backgroundColor':'transparent','display':'none'});
+    // 选择车型
+    var area6 = new LArea();
+    area6.init({
+        'trigger': '#demo6',
+        'keys': {
+            id: 'id',
+            name: 'name'
+        },
+        'type': 1,
+        'data': LAreaData3
+    });
+    //选择颜色
+    $('#color').on('click',function(){
+    	$(this).css({'background':'url(images/sanjiao1.png) no-repeat','background-position':'80%'});
+    	$('#demo6').css({'background':'url(images/sanjiao.png) no-repeat','background-position':'80%'});
+    	$('.gearArea').empty();
+    	$('#overlay').css('display','block');
+    	$('#colorOpt').css('display','block');
+    	$('body').css('overflow','hidden');
+    	var docHeight = $(document).height(); //获取窗口高度  
+    	var h = $('.car_picTitle').height();
+        $('#overlay')  
+		    .height(docHeight)  
+		    .css({  
+		      'opacity': .5, //透明度  
+		      'position': 'absolute',  
+		      'top': h,  
+		      'left': 0,  
+		      'background-color': 'black',  
+		      'width': '100%',  
+		      'z-index': 99 //保证这个悬浮层位于其它内容之上  
+		 });  
+
+    })
+    $('.confirm').on('click',function(){
+    	$('#colorOpt').css('display','none');
+    	$('body').css('overflow','');
+    	$('#overlay').css('display','none');
+    	$('#color').css({'background':'url(images/sanjiao.png) no-repeat','background-position':'80%'});
+    	 
+    })
+    $('.colors').on('click','.color_item',function(){
+
+    	
+    	$('.color_item').removeClass('active');
+    	$(this).toggleClass('active');
+
+    })
+</script>
+</body>
+</html> 

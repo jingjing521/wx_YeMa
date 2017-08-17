@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+<!--离线应用的另一个技巧-->
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<!--指定的iphone中safari顶端的状态条的样式-->
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<!--告诉设备忽略将页面中的数字识别为电话号码-->
+<meta content="telephone=no" name="format-detection" />
+<title>道路救援呼叫</title>
+<link rel="stylesheet" type="text/css" href="css/reservation.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/alertShow.js"></script>
+<script type="text/javascript">
+    $(function(){
+	   $('#demo3').on('click', function(){
+			popTipShow.confirm('拨打紧急呼叫电话','400-00000000',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					
+				  }
+				}
+			);
+	   });
+	   
+	});
+    </script>
+</head>
+
+<body style="background:#f2f3f7;">
+<div class="index-bg">
+<!--头部-->
+	
+<!--头部-->
+<!--主体部分-->
+	<div class="roadside">
+    	<div class="roadside-image"  id="demo3">
+        	<img src="images/紧急-呼叫----------.png">
+        </div>
+        <div class="roadside-text">如果遇到紧急状况，请点击<a >【紧急呼叫】</a></div>
+        <div class="roadside-text">一键拨打电话请求帮助</div>
+    </div>
+<!--主体部分-->
+</div>
+</body>
+</html>

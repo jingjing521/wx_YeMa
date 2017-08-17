@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=no;" id="viewport" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>野马T70</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-2.2.1.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div id="ym_70">
+   	    <ul class="ym_t70">
+			<li class="ym_decription ym_active"><a href="carSummary.html">综述</a></li>
+			<li class="ym_canshu"><a href="carParameter.html">参数</a></li>
+			<li class="ym_koubei"><a href="carPraise.html">口碑</a></li>
+	    </ul>
+    </div>
+	<div class="hr_3 marTop_90"></div>
+	<div class="car_compare">
+	    <a href="YeMaPic.html">
+            <img src="images/bigCar.png" alt="" />
+	        <div class="img_num"><i>425</i>张图片</div>
+
+	    </a>
+	</div>
+	<div class="market_price">市场指导价<i>7.98-11.88万</i></div>
+	<div class="hr_20"></div>
+	<ul class="car_model">
+		<li class="carModel_item active">2016款</li>
+		<li class="carModel_item">2015款</li>
+	</ul>
+	<div class="hr_16"></div>
+	<div class="carModel_1">
+		<div class="carModel_tit">1.8L自然吸气</div>
+		<div class="carModel_detail">
+			<span class="leftArea">2016款 舒适型 1.8L+5MT</span>
+			<span class="rightArea price">7.98万</span>
+		</div>
+		<ul class="carModel_option">
+			<li class="carModel_optItem"><a href="javascript:void(0);" class="add">加入对比</a></li>
+			<li class="carModel_optItem buy">购车计算</li>
+			<li class="carModel_optItem"><a href="buyCar.html">我要买车</a></li>
+		</ul>
+		<div class="hr_7"></div>
+		<div class="carModel_detail">
+			<span class="leftArea">2016款 精英型 1.8L+5MT</span>
+			<span class="rightArea price">8.68万</span>
+		</div>
+		<ul class="carModel_option">
+			<li class="carModel_optItem"><a href="javascript:void(0);" class="add complete">已加入</a></li>
+			<li class="carModel_optItem buy">购车计算</li>
+			<li class="carModel_optItem"><a href="buyCar.html">我要买车</a></li>
+		</ul>
+	</div>
+	<div class="hr_10"></div>
+	<div class="carModel_1">
+		<div class="carModel_tit">1.8T 涡轮增压</div>
+		<div class="carModel_detail">
+			<span class="leftArea">2016款 旗舰型 1.8T+CVT</span>
+			<span class="rightArea price">7.98万</span>
+		</div>
+		<ul class="carModel_option">
+			<li class="carModel_optItem"><a href="javascript:void(0);" class="add">加入对比</a></li>
+			<li class="carModel_optItem buy">购车计算</li>
+			<li class="carModel_optItem"><a href="buyCar.html">我要买车</a></li>
+		</ul>
+	</div>
+	<div class="hr_240"></div>
+	<div class="carModel_compare">
+	    <a href="compareOpt.html">
+		    <div class="carModel_com">对比<span class="cir"></span></div>
+		</a>
+	</div>
+	<a href="buyCar.html"><div class="car_buy">我要买车</div></a>
+  <script>
+  $('.car_model').on('click','.carModel_item',function(){
+  	$('.carModel_item').removeClass('active');
+  	$(this).toggleClass('active');
+
+  })
+  $(document).ready(function(e) {
+		$('.buy').click(function(){
+             strs=109800;
+			 // var price=0;
+			 // price=$('.price').text();
+			 // console.log(price);
+			 // var str=price.replace("万","00");
+			 // var strs=str.replace(".",""); 
+			 window.location.href="car-calculator1.html?price="+strs;
+		});
+    });
+ 
+  
+  </script>
+</body>
+</html>

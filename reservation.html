@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+<!--离线应用的另一个技巧-->
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<!--指定的iphone中safari顶端的状态条的样式-->
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<!--告诉设备忽略将页面中的数字识别为电话号码-->
+<meta content="telephone=no" name="format-detection" />
+<title>售后预约</title>
+<link rel="stylesheet" type="text/css" href="css/reservation.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/alertShow.js"></script>
+<script type="text/javascript">
+    $(function(){
+	   $('#demo3').on('click', function(){
+			popTipShow.confirm('拨打预约电话','400-00000000',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					
+				  }
+				}
+			);
+	   });
+	   
+	});
+    </script>
+</head>
+
+<body background="#f2f3f7">
+<div class="index-bg">
+<!--头部-->
+
+<!--头部-->
+<!--主体部分-->
+	<div class="reservation-main">
+		<a href="reservation-line.html"><div class="reservation-main-con" style="margin-top:10px;">
+        	<img src="images/图层-3.png" > 
+            <div class="reservation-main-con-text">
+            	<div class="reservation-main-con-title">-&nbsp;网上预约&nbsp;-</div>
+                <div class="reservation-main-con-titles">填写预约信息，快速获得服务安排</div>
+            </div>
+        </div></a>
+        <div class="reservation-main-con" id="demo3">
+        	<img src="images/图层-3_47.png" > 
+            <div class="reservation-main-con-text">
+            	<div class="reservation-main-con-title">-&nbsp;电话预约&nbsp;-</div>
+                <div class="reservation-main-con-titles">一键拨号，快速预约</div>
+            </div>
+        </div>
+        <a href="reservation-4s.html"><div class="reservation-main-con">
+        	<img src="images/图层-3_49.png" > 
+            <div class="reservation-main-con-text">
+            	<div class="reservation-main-con-title">-&nbsp;4S店预约&nbsp;-</div>
+                <div class="reservation-main-con-titles">指定4S店进行服务</div>
+            </div>
+        </div></a>
+    </div>
+<!--主体部分-->
+</div>
+</body>
+</html>

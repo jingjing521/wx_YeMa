@@ -1,0 +1,749 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+<!--离线应用的另一个技巧-->
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<!--指定的iphone中safari顶端的状态条的样式-->
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<!--告诉设备忽略将页面中的数字识别为电话号码-->
+<meta content="telephone=no" name="format-detection" />
+<title>购车计算器</title>
+<link rel="stylesheet" type="text/css" href="css/calculator.css">
+<link rel="stylesheet" href="css/LArea1.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<!-- tab选项卡JS启动 -->
+<script type="text/javascript">
+function fun(allNum,num){
+	for(var i=1;i<=allNum;i++){
+		$("#div-"+i).hide();
+	}
+	$("#div-"+num).show();
+}
+</script>
+<!-- 点击按钮颜色转换JS启动 -->
+<script type="text/javascript">
+    $(function(){
+        $('.on1').click(function(){
+            $('.on1').addClass('active');
+            $('.on2').removeClass('active');
+        });
+        $('.on2').click(function(){
+            $('.on2').addClass('active');
+            $('.on1').removeClass('active');
+        });
+	});
+ </script>
+</head>
+
+<body style="background:#f2f3f7;">
+<div class="index-bg">
+  <!--头部-->
+ 
+<!--头部-->
+<!--主体部分-->
+  <div class="calculator">
+  	<div class="calculator-left">
+		<li class="on1 active" id="li-1" onclick="fun(5,'1');">全款</li>
+		<li class="on2" id="li-2" onclick="fun(5,'2');">贷款</li>
+    </div>
+    <div class="calculator-right">
+		<div class="help-right-box"  id="div-1">
+        	<div class="calculator-all-tishi">全款预计花费总额</div>
+            <div class="calculator-all-price"><span class="yuan">￥</span><span id="allnum"></span><span class="yuan">元</span></div>
+            <div class="calculator-con">
+               <div class="calculator-con-t">
+                  <div class="calculator-con-t-name">车款</div>
+                  <div class="calculator-con-t-img"><img src="images/jiantou.png"></div>
+                  <div class="calculator-con-t-text">
+                    <div class="content-block">
+                        <input id="demo4" type="text"  name="demo4" readonly class="city" value="请选择车款"/>
+                        <input id="value4"  type="hidden" value="0,0,0"/>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="calculator-con-b">
+                   <div class="calculator-con-t-name">裸车价格（元）</div>
+                      <input type="tel" onkeyup='this.value=this.value.replace(/\D/gi,"");' placeholder="输入价格" id="l-price" onChange="changerprice()" value="">
+                   </div>
+                </div>
+              <div id="allhide">
+                <div class="calculator-cons" >
+            	 <div class="calculator-con-t" id="ca-show">
+                      <div class="calculator-con-t-name">必要花费（元）</div>
+                      <div class="calculator-con-t-img"><img id="ca-show-img" src="images/jiantou-拷贝-5.png"></div>
+                      <div class="calculator-con-t-texts" id="by-price">
+                       12,084
+                      </div>
+                      <div class="clear"></div>
+                 </div>
+                 <div class="calculator_show a" >
+                	<div class="calculator-con-t">
+                      <div class="calculator-con-t-name">购置税（元）</div>
+                      <div class="calculator-con-t-texts">
+                       10,154
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">上牌费用（元）</div>
+                      <div class="calculator-con-t-texts">
+                       500
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">车船使用税（元）</div>
+                      <div class="calculator-con-t-texts">
+                       480
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">交通事故责任强制保险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       950
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                 </div>
+            </div>
+            
+            <div class="calculator-cons"  >
+            	 <div class="calculator-con-t" id="ca-shows">
+                      <div class="calculator-con-t-name">商业保险（元）</div>
+                      <div class="calculator-con-t-img"><img id="ca-show-imgs" src="images/jiantou-拷贝-5.png"></div>
+                      <div class="calculator-con-t-texts" id="sy-price">
+                       6,748
+                      </div>
+                      <div class="clear"></div>
+                 </div>
+                 <div class="calculator_shows" style="display:none;">
+                	<div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkboxs" id="cb" checked name="one"  value="746"><label name="one" class="checked" for="one"></label></div>
+                      <div class="calculator-con-t-name">第三者责任险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       746
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" id="cb1" class="checkboxs" checked name="one" value="1752" ><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">车辆损失险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       1,752
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkboxs" id="cb2"  name="one" value="746" ><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">全车盗抢险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       746
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkboxs" id="cb3" checked name="one" value="1752"><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">玻璃单独破碎险（元）</div>
+                      <div class="calculator-con-t-texts">
+
+                       1,752
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkboxs" id="cb4" checked name="one" value="1752" onClick="changerprice()"><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">自燃损失险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       1,752
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                 </div>
+            </div>
+          </div>
+            <div class="calculator-all-tishi">此结果供仅参考，实际费用以本地激费为标准</div>
+        </div>
+           
+        <div class="help-right-box"  id="div-2" style="display:none;">
+        	
+            <div class="calculator-all-tishi">贷款预计花费总额</div>
+            <div class="calculator-all-price"><span class="yuan">￥</span><span id="allnums"></span><span class="yuan">元</span></div>
+            <div class="calculator-price-con">
+            	<div class="calculator-price-con-text">
+                	<div class="calculator-price-con-name">首付（元）</div>
+                    <div id="sf">52,484</div>
+                </div>
+                <div class="calculator-price-con-text">
+                	<div class="calculator-price-con-name">月供（元）</div>
+                    <div id="yf">7,719</div>
+                </div>
+                <div class="calculator-price-con-text" style="border:0;">
+                	<div class="calculator-price-con-name">利息（元）</div>
+                    <div id="lx">26,584</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="calculator-con">
+               <div class="calculator-con-t">
+                  <div class="calculator-con-t-name">车款</div>
+                  <div class="calculator-con-t-img"><img src="images/jiantou.png"></div>
+                  <div class="calculator-con-t-text">
+                    <div class="content-block">
+                        <input id="demo7" type="text" readonly    name="demo7" class="city" value="请选择车款"/>
+                        <input id="value7" type="hidden" value="0,0,0"/>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="calculator-con-b">
+                   <div class="calculator-con-t-name">裸车价格（元）</div>
+                      <input type="tel" onkeyup='this.value=this.value.replace(/\D/gi,"");' placeholder="输入价格" onChange="changerprices()" id="lj">
+                   </div>
+                </div>
+                <div class="calculator-cons" >
+                  <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">首付比例</div>
+                      <div class="calculator-con-t-img"><img src="images/jiantou.png"></div>
+                      <div class="calculator-con-t-text">
+                        <div class="content-block">
+                            <input id="demo5" type="text" readonly  onBlur="changerprices()"  name="demo5" class="city" value="30%"/>
+                            <input id="value5" type="hidden" value="0,0,0"/>
+                        </div>
+                       </div>
+                       <div class="clear"></div>
+                   </div>
+                   <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">还款年限</div>
+                      <div class="calculator-con-t-img"><img src="images/jiantou.png"></div>
+                      <div class="calculator-con-t-text">
+                        <div class="content-block">
+                            <input id="demo6" type="text" readonly    name="demo6" onBlur="changerprices()" class="city" value="1年"/>
+                            <input id="value6" type="hidden" value="12"/>
+                        </div>
+                       </div>
+                       <div class="clear"></div>
+                   </div>
+                </div>
+              <div id="allhides">
+                <div class="calculator-cons" >
+            	 <div class="calculator-con-t" id="ca-shows1">
+                      <div class="calculator-con-t-name">必要花费（元）</div>
+                      <div class="calculator-con-t-img"><img id="ca-show-imgs1" src="images/jiantou-拷贝-5.png"></div>
+                      <div class="calculator-con-t-texts" id="by">
+                       12,084
+                      </div>
+                      <div class="clear"></div>
+                 </div>
+                 <div class="calculator_shows1" style="display:none;">
+                	<div class="calculator-con-t">
+                      <div class="calculator-con-t-name">购置税（元）</div>
+                      <div class="calculator-con-t-texts">
+                       10,154
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">上牌费用（元）</div>
+                      <div class="calculator-con-t-texts">
+                       500
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">车船使用税（元）</div>
+                      <div class="calculator-con-t-texts">
+                       480
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-name">交通事故责任强制保险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       950
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                 </div>
+            </div>
+            
+            <div class="calculator-cons"  >
+            	 <div class="calculator-con-t" id="ca-shows2">
+                      <div class="calculator-con-t-name">商业保险（元）</div>
+                      <div class="calculator-con-t-img"><img id="ca-show-imgs2" src="images/jiantou-拷贝-5.png"></div>
+                      <div class="calculator-con-t-texts" id="sys">
+                       6,748
+                      </div>
+                      <div class="clear"></div>
+                 </div>
+                 <div class="calculator_shows2" style="display:none;">
+                	<div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkbox" id="" checked name="ones" value="746"><label name="one" class="checked" for="one"></label></div>
+                      <div class="calculator-con-t-name">第三者责任险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       746
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkbox" id=""  name="ones" value="1752"><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">车辆损失险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       1,752
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkbox" id="" checked name="ones" value="746"><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">全车盗抢险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       746
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkbox" id="" checked name="ones" value="1752"><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">玻璃单独破碎险（元）</div>
+                      <div class="calculator-con-t-texts">
+
+                       1,752
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                    <div class="calculator-con-t">
+                      <div class="calculator-con-t-input"><input type="checkbox" class="checkbox" id="" checked name="ones" value="1752"><label name="two" class="checked" for="two"></label></div>
+                      <div class="calculator-con-t-name">自燃损失险（元）</div>
+                      <div class="calculator-con-t-texts">
+                       1,752
+                      </div>
+                      <div class="clear"></div>
+                 	</div>
+                    
+                 </div>
+            </div>
+            <div class="calculator-all-tishi">此结果供仅参考，实际费用以本地激费为标准</div>
+          </div>
+        </div>
+  </div>
+<!--主体部分-->
+<script type="text/javascript">
+    $(function(){
+		var chkItem = $('input[name=one]');
+		chkItem.click(function(){
+			$('#sy-price').html(sum().toLocaleString());			
+			});
+		});
+/**
+		*@功能 计算总和
+		*@param null
+		*@return int	
+		**/
+		function sum(){
+			var valueArr= $('input[name=one]');  
+			var sumValue=0;  
+			valueArr.each(function(index, element) {
+                if($(this).is(":checked")){
+					if(isNaN(valueArr[index].value)||valueArr[index].value==null||valueArr[index].value==""){  
+					  sumValue +=0;  
+					}else{  
+					  sumValue +=parseFloat(valueArr[index].value);//强制转换为数字  
+					}
+					
+					}
+            });
+					
+			if(sumValue>0){  
+				sumValue = parseInt(sumValue);  
+			}  
+			else{  
+			  sumValue = 0;  
+			}  
+			return sumValue;
+		}
+
+	function parseUrl(){
+                var url=location.href;
+                var i=url.indexOf('?');
+                if(i==-1)return;
+                var querystr=url.substr(i+1);
+                var arr1=querystr.split('&');
+                var arr2=new Object();
+                for  (i in arr1){
+                    var ta=arr1[i].split('=');
+                    arr2[ta[0]]=ta[1];
+                }
+                return arr2;
+            }
+	 var v = parseUrl();//解析所有参数
+     $('#l-price').val(v['price']);
+	 
+	 
+	 
+	 $(document).ready(function(e) {
+        var sum=0;
+		var lprice=document.getElementById("l-price").value;
+		var byprice=document.getElementById("by-price").innerHTML;
+		var syprice=document.getElementById("sy-price").innerHTML;
+		
+		var str=byprice.replace(",","");
+		var strs=syprice.replace(",","");
+		
+		sum+=parseInt(lprice)+parseInt(str)+parseInt(strs);
+		var num=sum.toLocaleString();
+		
+		$("#allnum").text(num);
+    });
+	$('.checkboxs').click(function(){
+		setTimeout(function(e) {
+        var sum=0;
+		var lprice=document.getElementById("l-price").value;
+		var byprice=document.getElementById("by-price").innerHTML;
+		var syprice=document.getElementById("sy-price").innerHTML;	
+		
+		var str=byprice.replace(",","");
+		var strs=syprice.replace(",","");
+		
+		sum+=parseInt(lprice)+parseInt(str)+parseInt(strs);
+		var num=sum.toLocaleString();
+		$("#allnum").text(num);
+		
+    },50);	
+	});
+	function changerprice(){
+		$(document).ready(function(e) {
+        var sum=0;
+		var lprice=document.getElementById("l-price").value;
+		var byprice=document.getElementById("by-price").innerHTML;
+		var syprice=document.getElementById("sy-price").innerHTML;	
+		
+		var str=byprice.replace(",","");
+		var strs=syprice.replace(",","");
+		
+		sum+=parseInt(lprice)+parseInt(str)+parseInt(strs);
+		var num=sum.toLocaleString();
+		$("#allnum").text(num);	
+    });
+	}
+</script>
+<script>
+	$('#ca-show').click(function(){
+	  $(".calculator_show").toggle(function(){
+		// $("#ca-show-img").css("transform","rotate(-180deg)");
+			},
+		function(){
+		// $("#ca-show-img").css("transform","rotate(-360deg)");
+			}
+	  );
+	});
+	$('#ca-shows').click(function(e){
+    e.stopPropagation();
+	  $(".calculator_shows").toggle(function(){
+		// $("#ca-show-imgs").css("transform","rotate(-180deg)");
+			},
+		function(){
+		// $("#ca-show-imgs").css("transform","rotate(-360deg)");
+			}
+	  );
+	});
+	$('#ca-shows1').click(function(){
+	  $(".calculator_shows1").toggle(function(){
+		// $("#ca-show-imgs1").css("transform","rotate(-180deg)");
+			},
+		function(){
+		// $("#ca-show-imgs1").css("transform","rotate(-360deg)");
+			}
+	  );
+	});
+	$('#ca-shows2').click(function(e){
+     e.stopPropagation();
+
+	  $(".calculator_shows2").toggle(function(){
+		// $("#ca-show-imgs2").css("transform","rotate(-180deg)");
+			},
+		function(){
+		// $("#ca-show-imgs2").css("transform","rotate(-360deg)");
+			}
+	  );
+	});
+	
+</script>
+<script src="js/LAreaData1.js"></script>
+    <script src="js/LAreaData2.js"></script>
+    <script src="js/LArea.js"></script>
+    <script>
+    var area4 = new LArea3();
+    area4.init({
+        'trigger': '#demo4', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value4', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData3 //数据源
+    });
+    area4.value=[0,0,0];//控制初始位置，注意：该方法并不会影响到input的value
+	var area7 = new LAreas();
+    area7.init({
+        'trigger': '#demo7', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value7', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData3 //数据源
+    });
+    area7.value=[0,0,0];//控制初始位置，注意：该方法并不会影响到input的value
+	var area5 = new LArea1();
+    area5.init({
+        'trigger': '#demo5', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value5', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData5 //数据源
+    });
+    area5.value=[0,0,0];//控制初始位置，注意：该方法并不会影响到input的value
+	var area6 = new LArea1();
+    area6.init({
+        'trigger': '#demo6', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value6', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData6 //数据源
+    });
+    area6.value=[0,0,0];//控制初始位置，注意：该方法并不会影响到input的value
+
+	function changercar(){
+		
+			var sum=0;
+			var cprice=document.getElementById("value4").value;
+			var byprice=document.getElementById("by-price").innerHTML;
+			var syprice=document.getElementById("sy-price").innerHTML;	
+			var str=byprice.replace(",","");
+			var strs=syprice.replace(",","");
+			var strc=cprice.replace("2 ","");
+			sum+=parseInt(strc)+parseInt(str)+parseInt(strs);
+			var num=sum.toLocaleString();
+			$('#l-price').val(strc);
+			$("#allnum").text(num);
+			window.onload();
+	}
+
+
+
+    </script>	
+ <!--贷款-->
+ <script>
+ 	$(function(){
+		var chkItems = $('input[name=ones]');
+		chkItems.click(function(){
+			$('#sys').html(nums().toLocaleString());			
+			});
+		});
+
+/**
+		*@功能 计算总和
+		*@param null
+		*@return int	
+		**/
+		function nums(){
+			var valueArrs= $('input[name=ones]'); 
+			var sumValues=0;  
+			valueArrs.each(function(index, element) {
+                if($(this).is(":checked")){
+					if(isNaN(valueArrs[index].value)||valueArrs[index].value==null||valueArrs[index].value==""){  		
+					  sumValues +=0;  
+					}else{  
+					  sumValues +=parseFloat(valueArrs[index].value);//强制转换为数字  
+					}
+					
+					}
+            });
+					
+			if(sumValues>0){  
+				sumValues = parseInt(sumValues);  
+			}  
+			else{  
+			  sumValues = 0;  
+			}  
+			return sumValues;
+		}
+	
+	function parseUrl(){
+                var url=location.href;
+                var i=url.indexOf('?');
+                if(i==-1)return;
+                var querystr=url.substr(i+1);
+                var arr1=querystr.split('&');
+                var arr2=new Object();
+                for  (i in arr1){
+                    var ta=arr1[i].split('=');
+                    arr2[ta[0]]=ta[1];
+                }
+                return arr2;
+            }
+	 var v = parseUrl();//解析所有参数
+     $('#lj').val(v['price']);
+	 
+	 
+	 
+	 $(document).ready(function(e) {
+        var sum=0;
+		var lj=document.getElementById("lj").value;
+		var by=document.getElementById("by").innerHTML;
+		var sy=document.getElementById("sys").innerHTML;	
+		var str=by.replace(",","");
+		var strs=sy.replace(",","");
+		var sfbl=document.getElementById("demo5").value;
+		
+		var yf=document.getElementById("value6").value;
+		sum+=parseInt(lj)+parseInt(str)+parseInt(strs);
+		var sfbls=sfbl.replace("%","");
+		var blz=0;
+		blz=parseFloat(sum)*(sfbls/100);
+		var yfe=sum-blz;
+		var yfk=yfe/yf;
+		
+		var lx=0;
+		if(yf==12){
+			lx=yfk*0.06666;	
+		}else if(yf==24||yf==36||yf==48||yf==60||yf==72){
+			lx=yfk*0.0671;	 
+		}
+		
+		$("#lx").text(lx.toFixed(2));
+		var num=sum.toLocaleString();		
+		$("#allnums").text(num);
+		$("#yf").text(yfk.toFixed(2));
+		$("#sf").text(blz.toLocaleString());
+    });
+	
+	function changercars(){
+		
+			var sum=0;
+			var cprice=document.getElementById("value7").value;
+			var by=document.getElementById("by").innerHTML;
+			var sy=document.getElementById("sys").innerHTML;	
+			var str=by.replace(",","");
+			var strs=sy.replace(",","");
+			var strc=cprice.replace("2 ","");
+			var sfbl=document.getElementById("demo5").value;
+		
+		var yf=document.getElementById("value6").value;
+		
+		sum+=parseInt(strc)+parseInt(str)+parseInt(strs);
+		var sfbls=sfbl.replace("%","");
+		var blz=0;
+		blz=parseFloat(sum)*(sfbls/100);
+		var yfe=sum-blz;
+		var yfk=yfe/yf;
+		var lx=0;
+		if(yf==12){
+			lx=yfk*0.06666;	
+			
+		}else if(yf==24||yf==36||yf==48||yf==60||yf==72){
+			lx=yfk*0.0671;	
+		}
+		$('#lj').val(strc);
+		$("#lx").text(lx.toFixed(2));
+		var num=sum.toLocaleString();		
+		$("#allnums").text(num);
+		$("#yf").text(yfk.toFixed(2));
+		$("#sf").text(blz.toLocaleString());
+			
+	}
+	$('.checkbox').click(function(){
+		setTimeout(function(e) {
+        var sum=0;
+		var lj=document.getElementById("lj").value;
+		var by=document.getElementById("by").innerHTML;
+		var sy=document.getElementById("sys").innerHTML;	
+		var str=by.replace(",","");
+		var strs=sy.replace(",","");
+		var sfbl=document.getElementById("demo5").value;
+		
+		var yf=document.getElementById("value6").value;
+		var yfs=yf.replace("2 ","");
+		sum+=parseInt(lj)+parseInt(str)+parseInt(strs);
+		var sfbls=sfbl.replace("%","");
+		var blz=0;
+		blz=parseFloat(sum)*(sfbls/100);
+		var yfe=sum-blz;
+		var yfk=yfe/yfs;
+		var lx=0;
+		if(yfs==12){
+			lx=yfk*0.06666;	
+		}else if(yfs==24||yfs==36||yfs==48||yfs==60||yfs==72){
+			lx=yfk*0.0671;	
+		}
+		
+		$("#lx").text(lx.toFixed(2));
+		$("#yf").text(yfk.toFixed(2));
+		$("#sf").text(blz.toLocaleString());
+		var num=sum.toLocaleString();		
+		$("#allnums").text(num);
+		
+    },50);	
+	});
+	function changerprices(){
+		var sum=0;
+		var lj=document.getElementById("lj").value;
+		var by=document.getElementById("by").innerHTML;
+		var sy=document.getElementById("sys").innerHTML;	
+		var str=by.replace(",","");
+		var strs=sy.replace(",","");
+		var sfbl=document.getElementById("demo5").value;
+		
+		var yf=document.getElementById("value6").value;
+		var yfs=yf.replace("2 ","");
+		sum+=parseInt(lj)+parseInt(str)+parseInt(strs);
+		var sfbls=sfbl.replace("%","");
+		var blz=0;
+		blz=parseFloat(sum)*(sfbls/100);
+		var yfe=sum-blz;
+		var yfk=yfe/yfs;
+		var lx=0;
+		if(yfs==12){
+			lx=yfk*0.06666;	
+		}else if(yfs==24||yfs==36||yfs==48||yfs==60||yfs==72){
+			lx=yfk*0.0671;	
+		}
+		
+		$("#lx").text(lx.toFixed(2));
+		$("#yf").text(yfk.toFixed(2));
+		$("#sf").text(blz.toLocaleString());
+		var num=sum.toLocaleString();		
+		$("#allnums").text(num);
+	}
+ </script>
+ 
+</div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=1;" id="viewport" name="viewport" />
+<!--离线应用的另一个技巧-->
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<!--指定的iphone中safari顶端的状态条的样式-->
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<!--告诉设备忽略将页面中的数字识别为电话号码-->
+<meta content="telephone=no" name="format-detection" />
+<title>4S店</title>
+<link rel="stylesheet" type="text/css" href="css/reservation.css">
+<link rel="stylesheet" href="css/LArea1.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/alertShow.js"></script>
+<script type="text/javascript">
+    $(function(){
+	   $('#demo3').on('click', function(){
+			popTipShow.confirm('拨打4S电话','400-00000000',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					
+				  }
+				}
+			);
+	   });
+	   
+	   $('#demo4').on('click', function(){
+			popTipShow.confirm('拨打4S电话','400-00000000',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					
+				  }
+				}
+			);
+	   });
+	   
+	   $('#demo5').on('click', function(){
+			popTipShow.confirm('拨打4S电话','400-00000000',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					
+				  }
+				}
+			);
+	   });
+	   
+	   $('#demo6').on('click', function(){
+			popTipShow.confirm('拨打4S电话','400-00000000',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					
+				  }
+				}
+			);
+	   });
+	   $('#demo7').on('click', function(){
+			popTipShow.confirm('拨打4S电话','400-00000000',['确 定','取 消'],
+				function(e){
+				  //callback 处理按钮事件
+				  var button = $(e.target).attr('class');
+				  if(button == 'ok'){
+					//按下确定按钮执行的操作
+					//todo ....				
+					this.hide();
+					
+				  }
+
+				  if(button == 'cancel') {
+					//按下取消按钮执行的操作
+					//todo ....
+					this.hide();
+					
+				  }
+				}
+			);
+	   });
+	   
+	});
+    </script>
+<script>
+/*$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){  
+	$('.four-main-top-l').html(remote_ip_info.province+remote_ip_info.city);    
+});*/
+</script>
+
+</head>
+
+<body style="background:#f2f3f7;">
+<div class="index-bg">
+<!--头部-->
+	
+<!--头部-->
+<!--主体部分-->
+	<div class="four-main">
+    	<div class="four-main-top">
+        	<div class="four-mains">
+                <div class="four-main-top-l">
+                   <input id="demo1" type="text" readonly  class="citys" value="陕西省 西安市 未央区"/>
+                   <input id="value1" type="hidden" value="34,10,18"/>
+                </div>
+                <!--<div class="fl"><img src="images/xia.png"></div>-->
+                <div class="clear"></div>
+            </div>
+        </div> 
+        <div class="four-main-con">
+        	<div class="four-main-con-l">
+            	<div class="four-main-con-l-name">中国野马（陕西轩盛4s店）</div>
+                <div class="four-main-con-l-addr">西安未央区三桥西部国际车城内</div>
+                <div class="four-main-con-l-addr">630米</div>
+            </div>
+            <div class="four-main-con-r">
+               <div class="four-main-con-r-img" id="demo3"><img src="images/r-phone.png"></div>
+               <a href="4s-img.html"><div class="four-main-con-r-img"><img src="images/g-addr.png"></div></a>
+               <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="four-main-con">
+        	<div class="four-main-con-l">
+            	<div class="four-main-con-l-name">中国野马（陕西轩盛4s店）</div>
+                <div class="four-main-con-l-addr">西安未央区三桥西部国际车城内</div>
+                <div class="four-main-con-l-addr">630米</div>
+            </div>
+            <div class="four-main-con-r">
+               <div class="four-main-con-r-img" id="demo4"><img src="images/r-phone.png"></div>
+               <a href="4s-img.html"><div class="four-main-con-r-img"><img src="images/g-addr.png"></div></a>
+               <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="four-main-con">
+        	<div class="four-main-con-l">
+            	<div class="four-main-con-l-name">中国野马（陕西轩盛4s店）</div>
+                <div class="four-main-con-l-addr">西安未央区三桥西部国际车城内</div>
+                <div class="four-main-con-l-addr">630米</div>
+            </div>
+            <div class="four-main-con-r">
+               <div class="four-main-con-r-img" id="demo5"><img src="images/r-phone.png"></div>
+               <a href="4s-img.html"><div class="four-main-con-r-img"><img src="images/g-addr.png"></div></a>
+               <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="four-main-con">
+        	<div class="four-main-con-l">
+            	<div class="four-main-con-l-name">中国野马（陕西轩盛4s店）</div>
+                <div class="four-main-con-l-addr">西安未央区三桥西部国际车城内</div>
+                <div class="four-main-con-l-addr">630米</div>
+            </div>
+            <div class="four-main-con-r">
+               <div class="four-main-con-r-img" id="demo6"><img src="images/r-phone.png"></div>
+               <a href="4s-img.html"><div class="four-main-con-r-img"><img src="images/g-addr.png"></div></a>
+               <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="four-main-con">
+        	<div class="four-main-con-l">
+            	<div class="four-main-con-l-name">中国野马（陕西轩盛4s店）</div>
+                <div class="four-main-con-l-addr">西安未央区三桥西部国际车城内</div>
+                <div class="four-main-con-l-addr">630米</div>
+            </div>
+            <div class="four-main-con-r">
+               <div class="four-main-con-r-img" id="demo7"><img src="images/r-phone.png"></div>
+               <a href="4s-img.html"><div class="four-main-con-r-img"><img src="images/g-addr.png"></div></a>
+               <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+    </div>
+<!--主体部分-->
+<script src="js/LAreaData1.js"></script>
+    <script src="js/LAreaData2.js"></script>
+    <script src="js/LArea.js"></script>
+    <script>
+    var area1 = new LArea2();
+    area1.init({
+        'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value1', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData //数据源
+    });
+    area1.value=[9,0,12];//控制初始位置，注意：该方法并不会影响到input的value
+	</script>
+</div>
+</body>
+</html>

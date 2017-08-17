@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;list-style-type:none; font-size:14px;}
+a{color:#333;text-decoration:none;}
+body{font-family:'微软雅黑';background:#F5F5F5;}
+img{border:none;}
+.clear{clear:both;}
+
+.index-bg{margin:auto;overflow:hidden; height:auto !important;position:relative;min-width:320px;max-width:1024px;}
+
+/*头部*/
+.header{width:100%; height:40px; background:url(../pic/%E9%A1%B6%E9%83%A8%E8%83%8C%E6%99%AF.png) no-repeat;
+background-size:100%; 100%; overflow:hidden; z-index:10; line-height:40px;}
+.header-return{  float:left; height:40px; margin-left:1%; color:#fff; line-height:40px;}
+.header-return div{float:left;}
+.header-name{color:#fff; font-size:; position:absolute; line-height:40px; width:100%;  text-align:center;}
+.header-more{ float:right; height:40px; margin-right:2%;}
+
+/*主体部分*/
+.video-main{width:100%; height:auto;}
+.video-main-con{width:100%; height:auto; position:relative;}
+.video-main-con-img{ width:100%; height:auto; vertical-align:middle;}
+.video-start{position:absolute; top:50%; margin-top:-11.5%; width:15%; left:50%; margin-left:-7.5%; text-align:center;}
+.video-start img{width:100%;}
+.video-text{position:absolute; bottom:0px; background:url(../images/%E7%9F%A9%E5%BD%A2-2.png) no-repeat; background-size:100% 100%; height:auto; width:100%; padding-bottom:5px;}
+.video-text-title{ color:#fff; font-size:16px; line-height:35px; width:97%; padding:0 1.5%; margin:auto;overflow: hidden; /*自动隐藏文字*/
+text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+white-space: nowrap;}
+.video-text-num{width:97%; margin:auto; padding:0 1.5%; font-size:14px; color:#999;}
+.video-text-num div{float:left; margin-right:5px;}
+
+
+/******视频详情******/
+.video-details{width:100%; height:auto;}
+.fl{float:left;}
+.ml{margin-left:10px; margin-top:1px;}
+.video-details-text{width:94%; height:auto; background:#fff; padding:3%; color:#666; line-height:23px;}
+.video-details-hot{width:94%; height:auto; background:#fff; margin-top:15px; padding:3%; }
+.video-details-hot-title div{float:left; margin-right:5px;}
+.video-details-hot-title{color:#333; } 
+.video-details-hot-con{width:100%; margin-top:10px;}
+.video-details-hot-con-l{width:32%; float:left;}
+.video-details-hot-con-l img{width:100%; height:auto;}
+.video-details-hot-con-r{width:65%; margin-left:3%; float:left;}
+.video-details-hot-con-r-text{color:#333; line-height:25px;}
+.video-details-hot-con-r-num{width:100%; height:auto; color:#999; margin-top:15px; font-size:12px;}
+.video-details-hot-con-r-num div{float:left; margin-right:5px;}
+
+
+/*******视频播放页面********/
+.video-sp{width:100%; height:100%;}
+.video-sp-v{ margin-top:40%;}
+.video-sp-l{}
+
+

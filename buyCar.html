@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, minimum-scale=1,initial-scale=1, maximum-scale=1, user-scalable=no;" id="viewport" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>我要买车</title>
+    <!-- Google Web Fonts -->
+    <link rel="stylesheet" href="css/sm.css">
+    <link rel="stylesheet" href="css/sm-extend.css">
+    <link rel="stylesheet" href="css/demos.css">
+    <style>
+     .list-block{margin:0;}
+     .list-block .item-title.label{width: 30%;color: #999;}
+     .btns .button{margin-top: 1.4rem;margin: 1.4rem 0.24rem 0 0.24rem;height: 2.5rem;background: #b70005;border-radius: 0.3rem;font-size: 0.3rem;text-align: center;line-height: 2.5em;border:none;color: #fff;}
+     #picker1,#picker2,#picker,#city-picker{background: url(images/jiantou.png) no-repeat;background-position: 100%;}
+     .picker-items{font-size: 0.85rem;}
+     .btns .button{font-size: 1rem;}
+     #page-city-picker{margin-top: 0.4rem;}
+     .list-block input[type="text"]{color: #333;}
+     .bar{background: #fff;}
+     .pull-left{color: #dedddd;}
+     .picker-modal-inner {background: #fff;}
+     .picker-items{background: #fff;}
+     .picker-modal-inner .pull-left{background: #fff;}
+     .picker-items{background: #fff;}
+    </style>
+    <script src="js/hm.js"></script>
+    <script src="js/zepto.js"></script>
+    <script src="js/config.js"></script>
+  </head>
+  <body class="" style="color: #2e2e2e;">
+  <div class="" id="page-city-picker">
+    <div id="page-picker" class="page-current">
+          <div class="native-scroll" style="">
+            <div class="">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">姓名</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="填写姓名" id="">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+             <div class="">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">性别</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="选择性别" id="picker1" readonly="">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">电话</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="请输入您的电话" id="phone-id">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">所在地区</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="" id="city-picker" readonly="" value="浙江 杭州 拱墅区">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">意向车型</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="选择车型" id="picker" readonly="" style="table-layout: fixed;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding-right: 20%;">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">心里价位</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="请输入您的心里价位" id="" onkeyup='this.value=this.value.replace(/\D/gi,"");'>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">获知途径</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="请输入您的获知途径" id="picker2" readonly="">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    <p class="btns" style="margin:4em 0"><a href="carSummary.html" class="button">提交</a></p>
+   
+     
+ 
+    <script src="js/sm.js"></script>
+    <script src="js/sm-extend.js"></script>
+    <script src="js/sm-city-picker.js"></script>
+    <script src="js/demos.js"></script>
+    <script>
+      $("#phone-id").keydown(function(event) {  
+        var reg = /^\d{11}$/;  
+        var value = $(this).val();  
+        var e = event || window.event || arguments.callee.caller.arguments[0];  
+          
+        if(e.keyCode === 8) {  
+            return true;  
+        }  
+          
+        if(e.keyCode == 32) {  
+            return false;  
+        }  
+          
+        if(reg.test(value)) {         
+            return false;  
+        }   
+          
+    });  
+
+      
+    </script>
+
+</body>
+</html>
